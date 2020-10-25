@@ -1,0 +1,157 @@
+:root {
+    /* ## Colors */
+    /* ### Primary */
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --very-dark-blackish-blue-opac: hsla(217, 30%, 14%, 0.7);
+    --white: hsl(0, 0%, 100%);
+    --white-opac: hsla(0, 0%, 100%, 0.5);
+    /* ### Neutral */
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+p {
+    margin: 0;
+    color: var(--white);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--light-grayish-blue);
+}
+
+.main {
+    padding: 5.47rem 1.85rem;
+    max-width: 1109px;
+    margin: 0 auto;
+}
+
+.main .grid {
+    display: grid;
+    grid-row-gap: 2rem;
+}
+
+.main .grid .item-grid {
+    padding: 1.8rem 1.8rem;
+    border-radius: 8px;
+}
+
+.main .grid .item-grid:nth-child(1) {
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 90% top;
+    background-color: var(--moderate-violet);
+}
+
+.main .grid .item-grid:nth-child(2) {
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.main .grid .item-grid:nth-child(3) {
+    background-color: var(--white);
+}
+
+.main .grid .item-grid:nth-child(4) {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.main .grid .item-grid:nth-child(5) {
+    background-color: var(--white);
+}
+
+.main .grid .item-grid .card-header .text-color {
+    color: var(--very-dark-blackish-blue-opac);
+    font-size: .7rem;
+}
+
+.main .grid .item-grid .card-body .text-color {
+    color: var(--very-dark-blackish-blue-opac);
+}
+
+.main .grid .item-grid .card-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: .9rem;
+    align-items: center;
+    /* border: 1px solid red; */
+    margin-bottom: 1rem;
+}
+
+.main .grid .item-grid .card-header p {
+    color: var(--white);
+}
+
+.main .grid .item-grid .card-header small {
+    color: var(--white-opac);
+}
+
+.main .grid .item-grid .card-header .img {
+    width: 1.6rem;
+    border-radius: 50%;
+    border: 2px solid var(--white-opac);
+}
+
+.main .grid .item-grid .card-header .img-color {
+    width: 1.6rem;
+    border-radius: 50%;
+    border: 2px solid var(--moderate-violet);
+}
+
+
+/* cuerpo */
+
+.main .grid .item-grid .card-body .sub-title {
+    font-size: 1.23rem;
+    margin-bottom: 1.3rem;
+    font-weight: 600;
+}
+
+.main .grid .item-grid .card-body .text {
+    color: var(--white-opac);
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+@media screen and (min-width:1024px) {
+    .main .grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 30px;
+        grid-template-areas: "card-1 card-1 card-2 card-3" "card-4 card-5 card-5 card-3";
+    }
+    .main .grid .item-grid .card-body .text {
+        font-size: 1rem;
+    }
+    .main .grid .item-grid .card-body .text-color {
+        font-size: 1rem;
+    }
+    .main .grid .item-grid:nth-child(1) {
+        grid-area: card-1;
+        background-position: 80% top;
+    }
+    .main .grid .item-grid:nth-child(2) {
+        grid-area: card-2;
+    }
+    .main .grid .item-grid:nth-child(3) {
+        grid-area: card-4;
+    }
+    .main .grid .item-grid:nth-child(4) {
+        grid-area: card-5;
+    }
+    .main .grid .item-grid:nth-child(5) {
+        grid-area: card-3;
+    }
+}
+
+
+/* cuerpo */
+
+
+/* 1. "Graduado verificado" tiene el mismo color que el nombre de la persona con un 50% de opacidad
+2. Los párrafos de revisión dentro de las citas también tienen el mismo color, pero tienen una opacidad del 70%. */
